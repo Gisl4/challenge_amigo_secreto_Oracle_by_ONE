@@ -1,0 +1,212 @@
+:root {
+    --color-primary: #FB9EC6;
+    --color-secondary: #FFE6C9;
+    --color-tertiary: #FFC785;
+    --color-button: #FFA09B;
+    --color-button-hover: #F5F5F5;
+    --color-text: #4B164C;
+    --color-white: #DD88CF;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 0;
+}
+
+/* Animación flotante mejorada para la imagen */
+@keyframes float-ultimate {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateY(-10px) rotate(2deg) scale(1.05);
+    }
+    50% {
+        transform: translateY(-15px) rotate(-2deg) scale(1.07);
+    }
+    75% {
+        transform: translateY(-10px) rotate(2deg) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+.header-banner img {
+    animation: float-ultimate 2s ease-in-out infinite;
+    max-width: 80%;
+}
+
+/* Sección de entrada */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px 64px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Animación combinada: Efecto de escritura + brillo dinámico */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px var(--color-primary);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--color-primary);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--color-primary);
+    }
+}
+
+.section-title {
+    font-family: "Inter", serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+    border-right: 3px solid var(--color-primary);
+    animation: typewriter 3s steps(40) infinite alternate, glow 2s ease-in-out infinite;
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.input-name {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+}
+
+/* Botones */
+button {
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Efecto de presionado */
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de sortear */
+.button-draw {
+    background: linear-gradient(135deg, var(--color-button), #FF708D);
+    color: white;
+    padding: 15px 40px;
+}
+
+.button-draw:hover {
+    background: linear-gradient(135deg, #FF708D, var(--color-button));
+    box-shadow: 0 6px 15px rgba(255, 112, 141, 0.5);
+}
+
+/* Botón deshabilitado */
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Animación sutil al pasar el mouse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.result-list {
+    margin-top: 15px;
+    color: #7D1C4A;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botón de sortear título */
+.button-draw img {
+    margin-right: 40px;
+}
